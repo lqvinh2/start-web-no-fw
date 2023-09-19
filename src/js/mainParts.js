@@ -1,4 +1,6 @@
 import { aboutMain } from "./aboutMain";
+import { contactIDEditMain } from "./contact-id-edit-main";
+import { contactIDMain } from "./contact-id-main";
 import { contactMain } from "./contactMain";
 import { indexMain } from "./indexMain";
 
@@ -15,5 +17,11 @@ window.startIndexMain = () => {
 }
 
 
+window.startContactIDMain = () => {
+  contactIDMain();
+}
 
+window.startContactIDEditMain = () => {
+  contactIDEditMain();
+}
 

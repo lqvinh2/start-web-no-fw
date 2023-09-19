@@ -2,16 +2,24 @@ import page from 'page';
 import { constBase } from './constBase';
 import { loadContentPage, loadContentPartAsync } from './commons';
 
-page('/', async function () {
-  await loadContentPartAsync(constBase.parts.main, constBase.partsHTML.indexMain)
+page('/', async (ctx, next) => {
+  await loadContentPartAsync(constBase.parts.main, constBase.partsHTML.indexMain, ctx, next)
 });
 
-page('/about', async function () {
-  await loadContentPartAsync(constBase.parts.main, constBase.partsHTML.aboutMain)
+page('/about', async (ctx, next) => {
+  await loadContentPartAsync(constBase.parts.main, constBase.partsHTML.aboutMain, ctx, next)
 });
 
-page('/contact', async function () {
-  await loadContentPartAsync(constBase.parts.main, constBase.partsHTML.contactMain)
+page('/contact', async (ctx, next) => {
+  await loadContentPartAsync(constBase.parts.main, constBase.partsHTML.contactMain, ctx, next)
+});
+
+page('/contact/:id', async (ctx, next) => {
+  await loadContentPartAsync(constBase.parts.main, constBase.partsHTML.contactIDMain, ctx, next)
+});
+
+page('/contact/:id/edit', async (ctx, next) => {
+  await loadContentPartAsync(constBase.parts.main, constBase.partsHTML.contactIDEditMain, ctx, next)
 });
 
 page.start();

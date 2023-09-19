@@ -9,8 +9,9 @@ window.state = stateModel
 
 // init value
 for (const key in constBase.state.countVisit) {
-  window.state.countVisitPage[key] = 0
+  window.state.countVisitPage[constBase.state.countVisit[key]] = 0
 }
+
 
 
 
