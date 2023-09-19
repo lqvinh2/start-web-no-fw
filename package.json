@@ -2,10 +2,10 @@
   "name": "learning2",
   "version": "1.0.0",
   "description": "",
-  "main": "*.js",
   "scripts": {
     "clean": "rimraf dist",
     "dev": "npm run clean && parcel *.html",
+    "build": "npm run clean && parcel build *.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
