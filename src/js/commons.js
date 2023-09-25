@@ -59,4 +59,10 @@ const loadContentPartAsync = async (partId, partHTML, ctx, next) => {
   }
 };
 
-export { loadContentPage, loadContentPartAsync };
+const getBrowserSize = () => {
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  return {width : w, height : h}
+}
+
+export { loadContentPage, loadContentPartAsync, getBrowserSize};

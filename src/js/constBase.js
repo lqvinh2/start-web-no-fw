@@ -1,8 +1,10 @@
 export const constBase = {
   parts : {
     header : 'header',
-    main : 'main',
+    sideMain : 'side-main',
     footer : 'footer',
+    sideLeft: 'side-left',
+    sideRight: 'side-right',
   },
   partsHTML : {
     footer : 'footer.html',
@@ -12,6 +14,8 @@ export const constBase = {
     aboutMain : 'aboutMain.html',
     contactIDMain:'contact-id-main.html',
     contactIDEditMain:'contact-id-edit-main.html',
+    sideLeft:'side-left.html',
+    sideRight:'side-right.html',
   },
   state : {
     countVisit : {

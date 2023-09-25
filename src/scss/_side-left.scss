@@ -1,0 +1,11 @@
+.wrapper-side-left {
+
+  background-color: aquamarine;
+
+  .side-left {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
