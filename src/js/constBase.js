@@ -1,10 +1,13 @@
 export const constBase = {
-  parts : {
+  parts : { // id of tag  like : <div id="back-drop"></div>
     header : 'header',
     sideMain : 'side-main',
     footer : 'footer',
     sideLeft: 'side-left',
     sideRight: 'side-right',
+    backDrop : 'back-drop',
+    allCateHeader: 'all-cate-header',
+    allCateSideLeft: 'all-cate-side-left'
   },
   partsHTML : {
     footer : 'footer.html',
@@ -16,6 +19,8 @@ export const constBase = {
     contactIDEditMain:'contact-id-edit-main.html',
     sideLeft:'side-left.html',
     sideRight:'side-right.html',
+    backDrop : 'back-drop.html',
+    allCate: 'all-cate.html',
   },
   state : {
     countVisit : {
@@ -33,5 +38,8 @@ export const constBase = {
       beforeUrl: 'before-url',
       contactID: 'contact-id',
     },
+  },
+  element : {
+    swiper : 'swiper-element',
   }
 }

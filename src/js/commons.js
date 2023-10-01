@@ -1,4 +1,3 @@
-import $, { contains } from 'jquery';
 import { constBase } from './constBase';
 
 const loadContentPage = (page) => {
@@ -65,4 +64,89 @@ const getBrowserSize = () => {
   return {width : w, height : h}
 }
 
-export { loadContentPage, loadContentPartAsync, getBrowserSize};
+function generateRandomID() {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let password = '';
+
+  for (let i = 0; i < 9; i++) {
+    if (i !== 0 && i % 3 === 0) {
+      password += '-';
+    } else {
+      const randomIndex = Math.floor(Math.random() * chars.length);
+      password += chars[randomIndex];
+    }
+  }
+
+  return password;
+}
+
+
+const animateSlideUp = (parent) => {
+  let eleBefore = undefined
+  const delayTime = parent.getAttribute('time') // miliSecond
+  const iiElements = parent.querySelectorAll('.ii');
+
+  let arr = [...iiElements]
+  eleBefore = arr[0]
+  arr[0].style.display = 'block';
+  let iii = 0
+  setInterval(() => {
+    if (iii === arr.length - 1) {
+      iii = -1
+    }
+    if (eleBefore) {
+      eleBefore.style.display = 'none';
+    }
+    const currEle = arr[++iii]
+    eleBefore = currEle
+    currEle.style.display = 'block';
+  }, delayTime);
+}
+
+// show Back Drop
+// call in base.js showBackDrop
+const showBackDrop = () => {
+  document.getElementById(constBase.parts.backDrop).style.display = 'block';
+}
+
+// hide back drop
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape' || event.key === 'Esc' || event.keyCode === 27) {
+    document.getElementById(constBase.parts.backDrop).style.display = 'none';
+  }
+});
+
+
+
+let intervalAnimateSlideUp = undefined;
+
+const runAnimateSlideUp = () => {
+  intervalAnimateSlideUp = setInterval(() => {
+
+    const listSlideUp = [...document.querySelectorAll('.animate-slide-up')]
+    if (listSlideUp.length <= 0) {
+      return
+    }
+
+    const listNotHasId = listSlideUp.filter(x => !x.id);
+    if (listNotHasId.length <= 0) {
+      return
+    }
+
+    // clearInterval(intervalAnimateSlideUp)
+
+    listNotHasId.forEach((ele, idx) => {
+      ele.id = 'animate-slide-up' + generateRandomID()
+      animateSlideUp(ele)
+    })
+  }, 500);
+}
+
+runAnimateSlideUp()
+
+
+
+
+
+
+export { loadContentPage, loadContentPartAsync, getBrowserSize, showBackDrop, generateRandomID};
