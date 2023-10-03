@@ -12,7 +12,7 @@ export const constBase = {
   partsHTML : {
     footer : 'footer.html',
     header : 'header.html',
-    indexMain : 'indexMain.html',
+    indexMain : 'index-main.html',
     contactMain : 'contact-main.html',
     aboutMain : 'aboutMain.html',
     contactIDMain:'contact-id-main.html',

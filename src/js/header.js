@@ -5,16 +5,19 @@ import {
 } from './commons';
 import { constBase } from './constBase';
 
+// CREATE event click button search
 let setIntervalBtnSearchHeader = setInterval(async () => {
   const btn = document.querySelector('.search-btn');
   if (btn) {
+    clearInterval(setIntervalBtnSearchHeader);
+
     await loadContentPartAsync(
       constBase.parts.backDrop,
       constBase.partsHTML.backDrop
     );
 
-    clearInterval(setIntervalBtnSearchHeader);
     btn.id = 'ufhg0b-s-' + generateRandomID();
+
     btn.addEventListener('click', async function (e) {
       e.preventDefault();
       showBackDrop();
@@ -22,6 +25,7 @@ let setIntervalBtnSearchHeader = setInterval(async () => {
   }
 }, 200);
 
+// LOAD All Category for header
 const loadAllCategorySide = () => {
   let setInt = setInterval(async () => {
     const btn = document.querySelector('.btn-all-cate');
@@ -30,23 +34,13 @@ const loadAllCategorySide = () => {
     if (btn && allC) {
       clearInterval(setInt);
 
-      const wBtn = $(btn).innerWidth();
       const hBtn = $(btn).innerHeight();
-      $(allC).width(wBtn);
-      $(allC).css('top', `${hBtn}px`);
 
+      $(allC).css('top', `${hBtn + 3}px`);
       await loadContentPartAsync(
         constBase.parts.allCateHeader,
         constBase.partsHTML.allCate
       );
-
-      window.addEventListener('resize', onresize);
-
-      onresize = (event) => {
-        const wBtn = $(btn).innerWidth();
-        $(allC).width(wBtn);
-        console.log(123);
-      };
     }
   }, 200);
 };

@@ -15,17 +15,35 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-$con-width-1 : 80%;
+$con-width-1 : 85%;
+$con-width-1-2 : 95%;
+
 @mixin container-1 {
   max-width: $con-width-1;
   margin: 0 auto;
   width: 100%;
+
+  // down to 1200
+  @include breakpoint(xxl, max) {
+    max-width:$con-width-1-2;
+  }
 }
+
 .container-1 {
   max-width: $con-width-1;
   margin: 0 auto;
   width: 100%;
+
+
 }
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 
 

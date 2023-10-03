@@ -1,5 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+$bg-header : #232f3e;
+$bg-white : #ffffff;
+
+
+$bg-primary : #ff3c20;
+$bg-primary-2 : #eb6a56;
+$border-color : silver;
+
+
+
+
+
+
+$s-sm : 14px;
+$s-sm-2 : 15px;
+$s-md : 16px;
+$s-large : 18px;
+$s-ex-large : 20px;
+
+
+
+$hdr-left : 17%;
+$hdr-right : 33%;
+
+$text-gray: #666;
+$text-black: #000000;
+$text-white: rgb(255, 255, 255);
+
+
 *{
 	list-style: none;
 	text-decoration: none;
@@ -8,18 +37,11 @@
 	outline: none;
 	box-sizing: border-box;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
-}
-i {
-	margin-right: 6px;
+	font-size: $s-sm;
+	color: $text-white;
+
 }
 
-
-.container-1200 {
-	max-width: 1200px !important;
-	width: 100%;
-	margin: 0 auto;
-}
 
 
 $side-left-width : 250px;
@@ -33,14 +55,12 @@ main {
 		position: relative;
 
 		.wrapper-side-left {
-			width: $side-left-width;
+			width: $hdr-left;
 			position: sticky;
 			top: 0;
 		}
 
 		.wrapper-side-main {
-
-			width: calc(100% - $side-left-width - $side-right-width);
 			flex-grow: 1;
 			.side-main {
 				padding: 0 16px;
@@ -111,16 +131,8 @@ main {
 	}
 }
 
+.font-18 {
+	font-size: 18px !important;
+}
 
 
-$bg-header : #232f3e;
-$bg-white : #dde3eb;
-$text-primary : #f84b30;
-$text-black : #151518;
-$text-hover : #f8f4f3;
-$hover-color : #f84b30;
-
-$hover-bg-color : #ff3c20;
-$bg-primary : #ff3c20;
-$bg-primary-2 : #eb6a56;
-$border-color : silver;

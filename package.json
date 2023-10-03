@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "clean": "rimraf dist",
-    "dev": "npm run clean && parcel *.html",
-    "build": "npm run clean && parcel build *.html",
+    "clean-parcel-dist": "rimraf dist",
+    "clean-parcel-cache": "rimraf .parcel-cache",
+    "dev": "npm run clean-parcel-dist && npm run clean-parcel-cache && parcel *.html",
+    "build": "npm run clean-parcel-dist && npm run clean-parcel-cache && parcel build *.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

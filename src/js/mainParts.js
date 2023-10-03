@@ -23,7 +23,7 @@ window.startSideLeft = () => {
 }
 
 window.startSideRight = () => {
-  sideRight();
+  //sideRight();
 }
 
 window.startContactIDMain = () => {
