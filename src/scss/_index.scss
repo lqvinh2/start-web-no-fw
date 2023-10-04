@@ -42,7 +42,7 @@
             }
 
             i {
-              width: 10%;
+              width: 30px;
               margin-left: 10px;
               color: $text-gray;
               transition: .3s;
@@ -50,7 +50,7 @@
 
             span {
               display: block;
-              width: 90%;
+              width: calc(100% - 30px);
               color: $text-gray;
               transition: .3s;
             }
