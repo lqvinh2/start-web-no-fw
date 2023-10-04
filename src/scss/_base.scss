@@ -1,16 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
 $bg-header : #232f3e;
 $bg-white : #ffffff;
 
 
 $bg-primary : #ff3c20;
+$bg-gray-100 : #dfd9d8;
 $bg-primary-2 : #eb6a56;
 $border-color : silver;
-
-
-
-
 
 
 $s-sm : 14px;
@@ -29,7 +24,7 @@ $text-black: #000000;
 $text-white: rgb(255, 255, 255);
 
 
-*{
+* {
 	list-style: none;
 	text-decoration: none;
 	margin: 0;
@@ -38,7 +33,7 @@ $text-white: rgb(255, 255, 255);
 	box-sizing: border-box;
 	font-family: 'Open Sans', sans-serif;
 	font-size: $s-sm;
-	color: $text-white;
+	color: $text-black;
 
 }
 
@@ -47,36 +42,12 @@ $text-white: rgb(255, 255, 255);
 $side-left-width : 250px;
 $side-right-width : 250px;
 
-main {
 
-	.main-side {
-		@include container-1;
-		display: flex;
-		position: relative;
-
-		.wrapper-side-left {
-			width: $hdr-left;
-			position: sticky;
-			top: 0;
-		}
-
-		.wrapper-side-main {
-			flex-grow: 1;
-			.side-main {
-				padding: 0 16px;
-			}
-		}
-
-		.wrapper-side-right {
-			width: $side-right-width;
-		}
-	}
-
-}
 
 .d-none {
 	display: none;
 }
+
 .o-0 {
 	opacity: 0;
 }
@@ -84,6 +55,7 @@ main {
 .ml-6 {
 	margin-left: 6px;
 }
+
 .mr-6 {
 	margin-right: 6px;
 }
@@ -116,15 +88,17 @@ main {
 	.back-drop-image {
 		z-index: 3;
 		top: 0;
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+		position: fixed;
+		height: 100vh;
+		width: 100vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
 		.img-container {
 			width: 100px;
-			img  {
+
+			img {
 				pointer-events: none;
 			}
 		}
@@ -136,3 +110,17 @@ main {
 }
 
 
+.main-side {
+	.wrapper-side-main {
+		.side-main {
+			@include container-1;
+		}
+	}
+}
+
+.swiper-pagination-bullet {
+	width: 34px;
+	border-radius: 3px;
+	height: 5px;
+	background-color: $bg-primary;
+}

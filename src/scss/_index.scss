@@ -1,7 +1,210 @@
-.top-slide {
-  .swiper-wrapper {
-    .swiper-slide {
-      background-color: $bg-primary-2;
+.index-main-part {
+
+
+  .category-slide {
+    display: flex;
+
+    .cate-side {
+      width: $hdr-left;
+      box-shadow: 0 0 6px 0 rgba(0, 0, 0, .15);
+
+      >ul {
+        li {
+          a {
+
+            color: $text-gray;
+            display: flex;
+            padding: 10px;
+            width: 100%;
+            font-size: 14px;
+            transition: all .3s;
+            position: relative;
+
+            &:before {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              width: 85%;
+              border-bottom: 1px solid;
+            }
+
+            &:hover {
+              background-color: $bg-gray-100;
+              box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+
+              i {
+                transform: scale(1.4);
+              }
+
+              span {
+                color: $bg-primary;
+              }
+            }
+
+            i {
+              width: 10%;
+              margin-left: 10px;
+              color: $text-gray;
+              transition: .3s;
+            }
+
+            span {
+              display: block;
+              width: 90%;
+              color: $text-gray;
+              transition: .3s;
+            }
+          }
+        }
+      }
+    }
+
+    .run-slide {
+
+      display: flex;
+      width: calc(100% - $hdr-left);
+
+      .slide-run-1 {
+        border: 1px solid red; // test
+        width: 70%;
+        position: relative;
+        margin-left: 10px;
+
+        .sw-slide-run-1 {
+          .swiper-wrapper {
+            .swiper-slide {
+              .img-container {
+                width: 100%;
+                height: 450px;
+              }
+            }
+          }
+        }
+      }
+
+      .slide-run-2 {
+        border: 1px solid red; // test
+        width: 30%;
+
+        .sw-slide-run-2 {
+          height: 450px;
+
+          .swiper-pagination-bullet {
+            width: 10px !important;
+            height: 10px !important;
+            border-radius: 50% !important;
+            background-color: $bg-primary !important;
+          }
+
+          .swiper-slide {
+            padding: 10px;
+
+            .img-container {
+              height: 100%;
+            }
+
+          }
+        }
+      }
     }
   }
+
+  .ss-daily-deal {
+    display: flex;
+    margin-top: 20px;
+
+    .daily-deal-intro {
+      width: $hdr-left;
+    }
+
+    .daily-deal-container {
+      width: calc(100% - $hdr-left);
+      margin-left: 12px;
+
+      .find-voucher {
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, .15);
+
+
+        .find-voucher-intro {
+          padding: 10px;
+
+          color: $text-white;
+          font-weight: 600;
+          font-size: $s-large;
+        }
+        .find-voucher-container {
+
+
+          display: flex;
+          flex-wrap: wrap;
+          align-items: start;
+
+          gap: 30px 10px;
+
+          .find-voucher-item {
+            flex-direction: column;
+            @include flex-center;
+            width: 80px;
+            padding: 5px 0;
+
+            &:hover {
+              .find-voucher-text {
+                color: $bg-primary;
+              }
+            }
+
+            .img-container {
+              width: 50px;
+              height: 50px;
+            }
+
+            .find-voucher-text {
+              margin-top: 5px;
+              text-align: center;
+              transition: all .2s;
+            }
+
+          }
+        }
+      }
+
+      .cate-with-image {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

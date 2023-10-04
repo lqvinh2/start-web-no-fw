@@ -5,14 +5,14 @@
   "scripts": {
     "clean-parcel-dist": "rimraf dist",
     "clean-parcel-cache": "rimraf .parcel-cache",
-    "dev": "npm run clean-parcel-dist && npm run clean-parcel-cache && parcel *.html",
+    "dev": "npm run clean-parcel-dist && npm run clean-parcel-cache && parcel *.html --no-cache",
     "build": "npm run clean-parcel-dist && npm run clean-parcel-cache && parcel build *.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "navigo": "^8.11.1",
+    "@rbf/parcel-optimizer-javascript-obfuscator": "^0.2.2",
     "page": "^1.11.6",
     "parcel": "^2.9.3"
   },

@@ -19,7 +19,7 @@ window.startIndexMain = () => {
 }
 
 window.startSideLeft = () => {
-  sideLeft();
+  //sideLeft();
 }
 
 window.startSideRight = () => {
