@@ -5,6 +5,7 @@ https://sb-emarket.mybigcommerce.com/
 
 
 1. run app
+nhớ copy hình vào trong thư mục dist => [copy folder assets -> dist]
 yarn dev
 yarn build
 
