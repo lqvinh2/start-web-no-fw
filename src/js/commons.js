@@ -12,7 +12,7 @@ const loadContentPage = (page) => {
 const loadContentPartAsync = async (partId, partHTML, ctx, next) => {
   let countBefUrlParam = 0;
   let countCurUrlParam = 0;
-  let cnt = 0
+  let cnt = 0;
 
   const bb = constBase.storage.key.beforeUrl;
 
@@ -22,11 +22,11 @@ const loadContentPartAsync = async (partId, partHTML, ctx, next) => {
     countBefUrlParam = befUrl.countParam;
   }
 
-  cnt = countCurUrlParam - countBefUrlParam
+  cnt = countCurUrlParam - countBefUrlParam;
   if (cnt < 0) {
-    cnt = countBefUrlParam
-  }else {
-    cnt = countCurUrlParam
+    cnt = countBefUrlParam;
+  } else {
+    cnt = countCurUrlParam;
   }
 
   if (ctx) {
@@ -61,11 +61,12 @@ const loadContentPartAsync = async (partId, partHTML, ctx, next) => {
 const getBrowserSize = () => {
   const w = window.innerWidth;
   const h = window.innerHeight;
-  return {width : w, height : h}
-}
+  return { width: w, height: h };
+};
 
 function generateRandomID() {
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const chars =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let password = '';
 
   for (let i = 0; i < 9; i++) {
@@ -80,34 +81,33 @@ function generateRandomID() {
   return password;
 }
 
-
 const animateSlideUp = (parent) => {
-  let eleBefore = undefined
-  const delayTime = parent.getAttribute('time') // miliSecond
+  let eleBefore = undefined;
+  const delayTime = parent.getAttribute('time'); // miliSecond
   const iiElements = parent.querySelectorAll('.ii');
 
-  let arr = [...iiElements]
-  eleBefore = arr[0]
+  let arr = [...iiElements];
+  eleBefore = arr[0];
   arr[0].style.display = 'block';
-  let iii = 0
+  let iii = 0;
   setInterval(() => {
     if (iii === arr.length - 1) {
-      iii = -1
+      iii = -1;
     }
     if (eleBefore) {
       eleBefore.style.display = 'none';
     }
-    const currEle = arr[++iii]
-    eleBefore = currEle
+    const currEle = arr[++iii];
+    eleBefore = currEle;
     currEle.style.display = 'block';
   }, delayTime);
-}
+};
 
 // show Back Drop
 // call in base.js showBackDrop
 const showBackDrop = () => {
   document.getElementById(constBase.parts.backDrop).style.display = 'block';
-}
+};
 
 // hide back drop
 document.addEventListener('keydown', function (event) {
@@ -116,37 +116,65 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-
-
 let intervalAnimateSlideUp = undefined;
 
 const runAnimateSlideUp = () => {
   intervalAnimateSlideUp = setInterval(() => {
-
-    const listSlideUp = [...document.querySelectorAll('.animate-slide-up')]
+    const listSlideUp = [...document.querySelectorAll('.animate-slide-up')];
     if (listSlideUp.length <= 0) {
-      return
+      return;
     }
 
-    const listNotHasId = listSlideUp.filter(x => !x.id);
+    const listNotHasId = listSlideUp.filter((x) => !x.id);
     if (listNotHasId.length <= 0) {
-      return
+      return;
     }
 
     // clearInterval(intervalAnimateSlideUp)
 
     listNotHasId.forEach((ele, idx) => {
-      ele.id = 'animate-slide-up' + generateRandomID()
-      animateSlideUp(ele)
-    })
+      ele.id = 'animate-slide-up' + generateRandomID();
+      animateSlideUp(ele);
+    });
   }, 500);
-}
+};
 
-runAnimateSlideUp()
+runAnimateSlideUp();
 
+const runStarRatingLocal = (id) => {
+  const START_CLICKED = 'star-clicked';
 
+  const stars = [...document.querySelectorAll(`#${id} .star`)];
 
+  for (let i = stars.length - 1; i >= 0; i--) {
+    $(stars[i]).attr('id', i + 1);
+  }
 
+  stars.forEach((star, index) => {
+    star.addEventListener('click', () => {
+      const idClicked = parseInt($(star).attr('id'));
 
+      // reset all star to normal
+      for (let i = stars.length - 1; i >= 0; i--) {
+        stars[i].classList.remove(START_CLICKED);
+      }
 
-export { loadContentPage, loadContentPartAsync, getBrowserSize, showBackDrop, generateRandomID};
+      // set color from 1 -> clicked-star
+      stars.forEach((star, index) => {
+        const id = parseInt($(star).attr('id'));
+        if (idClicked <= id) {
+          star.classList.add(START_CLICKED);
+        }
+      });
+    });
+  });
+};
+
+export {
+  loadContentPage,
+  loadContentPartAsync,
+  getBrowserSize,
+  showBackDrop,
+  generateRandomID,
+  runStarRatingLocal,
+};

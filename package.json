@@ -5,7 +5,7 @@
   "scripts": {
     "clean-parcel-dist": "rimraf dist",
     "clean-parcel-cache": "rimraf .parcel-cache",
-    "dev": "npm run clean-parcel-dist && npm run clean-parcel-cache && parcel *.html --no-cache",
+    "dev": "npm run clean-parcel-dist && npm run clean-parcel-cache && parcel *.html --no-cache --no-source-maps",
     "build": "npm run clean-parcel-dist && npm run clean-parcel-cache && parcel build *.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
