@@ -5,9 +5,8 @@ https://sb-emarket.mybigcommerce.com/
 
 
 1. run app
-nhớ copy hình vào trong thư mục dist => [copy folder assets -> dist]
 yarn dev
-yarn build
+yarn build -> nhớ copy hình vào trong thư mục dist => [copy folder assets -> dist]
 
 2. download swiper
 https://unpkg.com/browse/swiper@10.3.0/
